@@ -620,7 +620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58caa9e1629a54b86b7b6d9d4c4f6c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - question: Test
+    isTrue: 1
+  - question: Test 2
+    isTrue: 0
+  - question: Test 3
+    isTrue: 0
 --- !u!4 &220209852
 Transform:
   m_ObjectHideFlags: 0

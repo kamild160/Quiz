@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
+//CZAS FILMU ODC 3 14:00
 
 public class GameMenager : MonoBehaviour
 {
@@ -10,27 +15,71 @@ public class GameMenager : MonoBehaviour
 
     private Question currentQuestion;
 
-    private void Start()
+    [SerializeField]
+    private Text questionText;
+
+    [SerializeField]
+    private float waitforquestion = 1.5f;
+
+    void Start()
     {
         if (unAnswered == null || unAnswered.Count == 0) //Jeżeli jest puste lub odpwoeidzniano na wszystkie pytania
         {
             unAnswered = questions.ToList<Question>();
 
-
+            
         }
 
-        GetRandomQuestion();
-        Debug.Log(currentQuestion.question + " is " + currentQuestion.isTrue);
-       
+        SetCurrentquestion();
+
+
     }
 
-    void GetRandomQuestion()//wybieramy randomowe pytanie z listy
+    void SetCurrentquestion()//wybieramy pytanie z listy
     {
         int randomQuestionID = Random.Range(0, unAnswered.Count);
         currentQuestion = unAnswered[randomQuestionID];
 
-        unAnswered.RemoveAt(randomQuestionID); //usuwamy to pytanie z listy 
+
+
+        questionText.text = currentQuestion.question; //wyświetl pytanie
 
     }
 
+    public void TruePressed() //wciśnięcie przysisku prawda
+    {
+        if (currentQuestion.isTrue)
+        {
+            Debug.Log("YES");
+
+        }
+        else
+        {
+            Debug.Log("NO");
+        }
+        StartCoroutine(GotoNextQuestion()); //przejdź do kolejnego pytania
+    }
+
+    public void FalsePressed()//wciśnięcie przysisku fałsz
+    {
+
+        if (!currentQuestion.isTrue)
+        {
+            Debug.Log("YES");
+        }
+        else
+        {
+            Debug.Log("NO");
+        }
+
+        StartCoroutine(GotoNextQuestion());
+    }
+
+    IEnumerator GotoNextQuestion()
+    {
+        unAnswered.Remove(currentQuestion); //usuwamy obecne pytanie
+        yield return new WaitForSeconds(waitforquestion); //czekamy chwile zanim załadujemy kolejne
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
 }

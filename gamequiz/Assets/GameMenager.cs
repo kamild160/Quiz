@@ -21,6 +21,15 @@ public class GameMenager : MonoBehaviour
     [SerializeField]
     private float waitforquestion = 1.5f;
 
+    [SerializeField]
+    private Text Truebuttontext;
+
+    [SerializeField]
+    private Text Falsebuttontext;
+
+    [SerializeField]
+    private Animator animationmove;
+
     void Start()
     {
         if (unAnswered == null || unAnswered.Count == 0) //Jeżeli jest puste lub odpwoeidzniano na wszystkie pytania
@@ -44,10 +53,23 @@ public class GameMenager : MonoBehaviour
 
         questionText.text = currentQuestion.question; //wyświetl pytanie
 
+        if (currentQuestion.isTrue)
+        {
+            Truebuttontext.text = "BRAWO ! Oby tak dalej ";
+            Falsebuttontext.text = "Niestety nie tym razem ";
+        }else
+        {
+
+            Truebuttontext.text = "Niestety nie tym razem ";
+            Falsebuttontext.text = "BRAWO ! Oby tak dalej ";
+        }
+
     }
 
     public void TruePressed() //wciśnięcie przysisku prawda
     {
+        animationmove.SetTrigger("False");
+
         if (currentQuestion.isTrue)
         {
             Debug.Log("YES");
@@ -62,7 +84,7 @@ public class GameMenager : MonoBehaviour
 
     public void FalsePressed()//wciśnięcie przysisku fałsz
     {
-
+        animationmove.SetTrigger("True");
         if (!currentQuestion.isTrue)
         {
             Debug.Log("YES");

@@ -28,6 +28,9 @@ public class GameMenager : MonoBehaviour
     private Text Falsebuttontext;
 
     [SerializeField]
+    private Text Nextbuttontext;
+
+    [SerializeField]
     private Animator animationmove;
 
     void Start()
@@ -57,11 +60,15 @@ public class GameMenager : MonoBehaviour
         {
             Truebuttontext.text = "BRAWO ! Oby tak dalej ";
             Falsebuttontext.text = "Niestety nie tym razem ";
+            Nextbuttontext.text = "Przechodzę do następnego pytania";
+
         }else
         {
 
             Truebuttontext.text = "Niestety nie tym razem ";
             Falsebuttontext.text = "BRAWO ! Oby tak dalej ";
+            Nextbuttontext.text = "Przechodzę do następnego pytania";
+
         }
 
     }

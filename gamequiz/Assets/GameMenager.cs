@@ -19,7 +19,7 @@ public class GameMenager : MonoBehaviour
     private Text questionText;
 
     [SerializeField]
-    private float waitforquestion = 1.5f;
+    private float waitforquestion = 1f;
 
     [SerializeField]
     private Text Truebuttontext;
@@ -101,6 +101,13 @@ public class GameMenager : MonoBehaviour
             Debug.Log("NO");
         }
 
+        StartCoroutine(GotoNextQuestion());
+    }
+
+    public void NextPressed()//wciśnięcie przysisku nie wiem 
+    {
+        animationmove.SetTrigger("Next");
+        
         StartCoroutine(GotoNextQuestion());
     }
 

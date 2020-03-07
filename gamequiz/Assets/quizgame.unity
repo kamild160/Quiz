@@ -406,7 +406,7 @@ Canvas:
   m_GameObject: {fileID: 198815361}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -433,8 +433,8 @@ RectTransform:
   - {fileID: 583091281}
   - {fileID: 1379276525}
   - {fileID: 1673429758}
-  - {fileID: 2131840538}
   - {fileID: 2145138662}
+  - {fileID: 2131840538}
   - {fileID: 1930566488}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -795,10 +795,10 @@ RectTransform:
   m_Father: {fileID: 198815365}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6, y: -84.449}
-  m_SizeDelta: {x: -29.099854, y: -466}
+  m_AnchorMin: {x: 0, y: 0.22600001}
+  m_AnchorMax: {x: 1, y: 0.39363995}
+  m_AnchoredPosition: {x: -2.1312866, y: 0.5}
+  m_SizeDelta: {x: -4.2625, y: 0.20000076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583091282
 MonoBehaviour:
@@ -822,14 +822,14 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 51
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 51
     m_Alignment: 1
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Odpowied\u017A"
 --- !u!222 &583091283
@@ -2095,8 +2095,8 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "Odpoweid\u017A"
 --- !u!222 &1379276524
@@ -2121,10 +2121,10 @@ RectTransform:
   m_Father: {fileID: 198815365}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6, y: -199.71}
-  m_SizeDelta: {x: -29.099854, y: -466}
+  m_AnchorMin: {x: 0, y: 0.039279435}
+  m_AnchorMax: {x: 0.99381626, y: 0.21686031}
+  m_AnchoredPosition: {x: 7.7749023, y: -0.9000244}
+  m_SizeDelta: {x: 15.549927, y: 4.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1445581761
 GameObject:
@@ -2368,10 +2368,10 @@ RectTransform:
   m_Father: {fileID: 198815365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.099975586, y: 37.5}
-  m_SizeDelta: {x: -29.099854, y: -466}
+  m_AnchorMin: {x: 0, y: 0.4721178}
+  m_AnchorMax: {x: 1, y: 0.63500005}
+  m_AnchoredPosition: {x: 0, y: -8.753}
+  m_SizeDelta: {x: -8.525024, y: 15.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623085533
 MonoBehaviour:
@@ -2386,25 +2386,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.7019608, b: 0.20392159, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 0.882353, b: 0.054901965, a: 1}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 51
+    m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
+    m_BestFit: 1
+    m_MinSize: 0
     m_MaxSize: 51
     m_Alignment: 1
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Odpoweid\u017A"
+  m_Text: tekst
 --- !u!222 &1623085534
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2761,10 +2761,10 @@ RectTransform:
   m_Father: {fileID: 198815365}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.23417}
-  m_AnchorMax: {x: 1, y: 0.44700003}
-  m_AnchoredPosition: {x: 0, y: -109.32}
-  m_SizeDelta: {x: 0, y: 8.850006}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.23417}
+  m_AnchoredPosition: {x: 0, y: 6.544983}
+  m_SizeDelta: {x: 0, y: -0.1499939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1934454340
 GameObject:
@@ -3123,7 +3123,7 @@ RectTransform:
   - {fileID: 739123267}
   - {fileID: 2100006797}
   m_Father: {fileID: 198815365}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.44700003}
   m_AnchorMax: {x: 1, y: 0.68728274}
@@ -3160,7 +3160,7 @@ RectTransform:
   - {fileID: 333668355}
   - {fileID: 1855663926}
   m_Father: {fileID: 198815365}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.23417}
   m_AnchorMax: {x: 1, y: 0.44700003}

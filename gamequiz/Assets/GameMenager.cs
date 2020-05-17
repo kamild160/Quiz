@@ -41,7 +41,7 @@ public class GameMenager : MonoBehaviour
 
             
         }
-
+    
         SetCurrentquestion();
 
 
@@ -79,6 +79,7 @@ public class GameMenager : MonoBehaviour
 
         if (currentQuestion.isTrue)
         {
+            Scores.pointssum += 1;
             Debug.Log("YES");
 
         }
@@ -94,6 +95,7 @@ public class GameMenager : MonoBehaviour
         animationmove.SetTrigger("True");
         if (!currentQuestion.isTrue)
         {
+            Scores.pointssum += 1;
             Debug.Log("YES");
         }
         else
@@ -114,11 +116,17 @@ public class GameMenager : MonoBehaviour
     IEnumerator GotoNextQuestion()
     {
         unAnswered.Remove(currentQuestion); //usuwamy obecne pytanie
+        if (unAnswered.Count == 0)
+        {
+            yield return new WaitForSeconds(waitforquestion);
+            SceneManager.LoadScene("sumup");
+        }
+        else { }
         yield return new WaitForSeconds(waitforquestion); //czekamy chwile zanim załadujemy kolejne
         Screen.fullScreen = !Screen.fullScreen;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
 
     }
-}
+    }
+

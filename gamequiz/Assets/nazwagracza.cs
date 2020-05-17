@@ -24,9 +24,8 @@ public class nazwagracza : MonoBehaviour
         if (!PlayerPrefs.HasKey(Playernick))
         { return; }
 
-        string defaultName = PlayerPrefs.GetString(Playernick);
-        nameInput.text = defaultName;
-
+        string defaultName = nameInput.text;
+ 
         SetPlayerName(defaultName);
     }
 

@@ -492,15 +492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58caa9e1629a54b86b7b6d9d4c4f6c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions:
-  - question: "Na ziemi jest wi\u0119cej drzew ni\u017C gwiazd na niebie"
+  questions: []
+  unAnswered:
+  - question: test
+    optionsanswers: []
+    rightAnswer: 
     isTrue: 1
-  - question: "Kwiaty nie potrzebuj\u0105 wody \u017Ceby \u017Cy\u0107"
-    isTrue: 0
-  - question: 2+2=4
-    isTrue: 1
-  - question: "D\u0142ugopis jest czerwony"
-    isTrue: 0
   questionText: {fileID: 1362885890}
   waitforquestion: 1.5
   Truebuttontext: {fileID: 1623085533}
@@ -2463,8 +2460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -71.15}
-  m_SizeDelta: {x: 0, y: 142.3}
+  m_AnchoredPosition: {x: 0, y: -69.25}
+  m_SizeDelta: {x: -120, y: 138.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1855663925
 GameObject:
@@ -2779,7 +2776,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.23417}
   m_AnchoredPosition: {x: 0, y: 6.544983}
-  m_SizeDelta: {x: 0, y: -0.1499939}
+  m_SizeDelta: {x: -120, y: -0.1499939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1934454340
 GameObject:
@@ -3143,7 +3140,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.44700003}
   m_AnchorMax: {x: 1, y: 0.68728274}
   m_AnchoredPosition: {x: 0, y: -1.075}
-  m_SizeDelta: {x: 0, y: -2.149994}
+  m_SizeDelta: {x: -120, y: -2.149994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2145138661
 GameObject:
@@ -3180,5 +3177,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.23417}
   m_AnchorMax: {x: 1, y: 0.44700003}
   m_AnchoredPosition: {x: 0, y: 5.779999}
-  m_SizeDelta: {x: 0, y: 8.849998}
+  m_SizeDelta: {x: -120, y: 8.849998}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -9,8 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameMenager : MonoBehaviour
 {
     public Question[] questions;
-
-    private static List<Question> unAnswered;
+    public List<Question> unAnswered;
 
     private Question currentQuestion;
 
@@ -34,24 +33,25 @@ public class GameMenager : MonoBehaviour
 
     void Start()
     {
-        Screen.fullScreen = !Screen.fullScreen;
-        if (unAnswered == null || unAnswered.Count == 0) //Jeżeli jest puste lub odpwoeidzniano na wszystkie pytania
-        {
-            unAnswered = questions.ToList<Question>();
+        
 
-            
-        }
+        Debug.Log("dodano");
+
+        Screen.fullScreen = !Screen.fullScreen;
     
         SetCurrentquestion();
 
 
     }
+    
 
     void SetCurrentquestion()//wybieramy pytanie z listy
     {
+        
+
         int randomQuestionID = Random.Range(0, unAnswered.Count);
         currentQuestion = unAnswered[randomQuestionID];
-
+        
 
 
         questionText.text = currentQuestion.question; //wyświetl pytanie
@@ -116,7 +116,8 @@ public class GameMenager : MonoBehaviour
     IEnumerator GotoNextQuestion()
     {
         unAnswered.Remove(currentQuestion); //usuwamy obecne pytanie
-        if (unAnswered.Count == 0)
+        Debug.Log("usunięte");
+        if (unAnswered == null || unAnswered.Count == 0)
         {
             yield return new WaitForSeconds(waitforquestion);
             SceneManager.LoadScene("sumup");

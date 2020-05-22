@@ -18,6 +18,6 @@ public class Scores: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        points.text = "Zdobyte punkty " + pointssum;
+        points.text = "Zdobyte punkty:  " + pointssum;
     }
 }

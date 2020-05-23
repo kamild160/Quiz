@@ -2,18 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Quizgamemenager : MonoBehaviour
 {
     [SerializeField]
     private UI ui;
-    [SerializeField]
+    [SerializeField] private Quizdata quizDB;
     private List<Question> questions;
     private Question selectQuestion;
+    [SerializeField]
+    private float waitforquestion = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
+        questions = quizDB.questions;
         SetCurrentquestion();
     }
 
@@ -29,9 +33,19 @@ public class Quizgamemenager : MonoBehaviour
 
         int randomQuestionID = UnityEngine.Random.Range(0, questions.Count);
         selectQuestion = questions[randomQuestionID];
-
-    
+        
         ui.Setquestion(selectQuestion);
+       
+
+        if (questions == null || questions.Count == 0)
+        {
+            
+            SceneManager.LoadScene("sumup");
+        }
+        else {
+            questions.RemoveAt(randomQuestionID);
+        }
+
     }
 
     public bool Answer(string answered)
@@ -41,14 +55,16 @@ public class Quizgamemenager : MonoBehaviour
         if(answered == selectQuestion.rightAnswer)
 
         {
+            Scores.pointssum += 1;
             correctanswer = true;
+            
 
         }
         else
         {
 
         }
-        Invoke("SetCurrentquestion", 0.5f);
+        Invoke("SetCurrentquestion", 1f);
         return correctanswer;
 
     }

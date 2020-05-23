@@ -8,8 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class GameMenager : MonoBehaviour
 {
-    public Question[] questions;
-    public List<Question> unAnswered;
+    [SerializeField] private QuestionTF quizDB;
+
+    
+   private List<Question> unAnswered;
 
     private Question currentQuestion;
 
@@ -35,10 +37,11 @@ public class GameMenager : MonoBehaviour
     {
         
 
-        Debug.Log("dodano");
+       
 
-        Screen.fullScreen = !Screen.fullScreen;
-    
+        
+
+        unAnswered = quizDB.questionstf;
         SetCurrentquestion();
 
 
@@ -70,6 +73,8 @@ public class GameMenager : MonoBehaviour
             Nextbuttontext.text = "Przechodzę do następnego pytania";
 
         }
+
+        unAnswered.RemoveAt(randomQuestionID); //usuwamy obecne pytanie
 
     }
 
@@ -115,8 +120,8 @@ public class GameMenager : MonoBehaviour
 
     IEnumerator GotoNextQuestion()
     {
-        unAnswered.Remove(currentQuestion); //usuwamy obecne pytanie
-        Debug.Log("usunięte");
+        
+        
         if (unAnswered == null || unAnswered.Count == 0)
         {
             yield return new WaitForSeconds(waitforquestion);

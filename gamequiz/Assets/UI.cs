@@ -46,10 +46,11 @@ public class UI : MonoBehaviour
             answers[i].GetComponentInChildren<Text>().text = answerlist[i];
             answers[i].name = answerlist[i];
             answers[i].image.color = ColorstandardColor; //set color of button to normal
-
+            
 
         }
         isanswered = false;
+        
     }
 
     private void Click(Button btn)

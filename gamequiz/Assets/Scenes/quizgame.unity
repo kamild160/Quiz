@@ -492,12 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58caa9e1629a54b86b7b6d9d4c4f6c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
-  unAnswered:
-  - question: test
-    optionsanswers: []
-    rightAnswer: 
-    isTrue: 1
+  quizDB: {fileID: 11400000, guid: 7ed8cc4dc44c54015bcc854e007851bc, type: 2}
   questionText: {fileID: 1362885890}
   waitforquestion: 1.5
   Truebuttontext: {fileID: 1623085533}

@@ -5,25 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gamescrren.unity
     guid: 098dffa5c4addbe45bd97262b5dbbfe7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/lobby.unity
     guid: 13a4dce2c793646d5b45d24a9d1313a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/quizgame.unity
     guid: 3cf488ef46c844f4a97286f3e3992ace
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/sumup.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gamemode.unity
     guid: 0ad3937c20ccb411489855bd15de9f9d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Questiontype.unity
     guid: 31894594259474fad839d8e5441a351c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/QuizgamePanel.unity
     guid: 30c83cd6d620449d6b326bdd1b6fdb6d
+  - enabled: 1
+    path: Assets/Scenes/Gamescrren IOS.unity
+    guid: 33afd674ec0524da3a0056a9ca806000
+  - enabled: 1
+    path: Assets/Scenes/Gamemode IOS.unity
+    guid: 754a0a65ebcd04a6abeef0252d272943
   m_configObjects: {}

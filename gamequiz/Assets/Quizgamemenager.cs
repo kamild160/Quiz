@@ -8,47 +8,49 @@ public class Quizgamemenager : MonoBehaviour
 {
     [SerializeField]
     private UI ui;
-    [SerializeField] private Quizdata quizDB;
-    private List<Question> questions;
-    private Question selectQuestion;
+
+    [SerializeField]
+    private List<Quizdata> quizDB;
+
     [SerializeField]
     private float waitforquestion = 1f;
 
-    // Start is called before the first frame update
-    void Start()
+    private List<Question> questions;
+
+    private Question selectQuestion;
+
+
+    private GameStatus gamestatus = GameStatus.Next;
+    public GameStatus Gamestatus { get { return gamestatus; } }
+
+    
+    public void StartQuiz(int index)
     {
-        questions = quizDB.questions;
+        questions =new List<Question>();
+
+        for (int i=0;i< quizDB[index].questions.Count; i++)
+        {
+            questions.Add(quizDB[index].questions[i]); //zapobiega załkowitemu usuwaniu pytań z listy
+        }
+
         SetCurrentquestion();
+        gamestatus = GameStatus.Plaing;
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetCurrentquestion()//wybieramy losowe pytanie z listy
     {
-
-    }
-
-    void SetCurrentquestion()//wybieramy pytanie z listy
-    {
-
 
         int randomQuestionID = UnityEngine.Random.Range(0, questions.Count);
         selectQuestion = questions[randomQuestionID];
         
         ui.Setquestion(selectQuestion);
-       
 
-        if (questions == null || questions.Count == 0)
-        {
-            
-            SceneManager.LoadScene("sumup");
-        }
-        else {
-            questions.RemoveAt(randomQuestionID);
-        }
+        questions.RemoveAt(randomQuestionID);
+                
 
     }
 
-    public bool Answer(string answered)
+    public bool Answer(string answered) //obsługa wybierania odpowiedzi
     {
         bool correctanswer = false;
 
@@ -57,19 +59,28 @@ public class Quizgamemenager : MonoBehaviour
         {
             Scores.pointssum += 1;
             correctanswer = true;
-            
 
+        }
+
+        if (questions.Count > 0) //jeżeli isnieje jeszcze pytanie załaduj je 
+        {
+            Invoke("SetCurrentquestion", 1f);
         }
         else
         {
+            SceneManager.LoadScene("sumup"); //jeżeli nie ma juz pytań pokaż ekran podsumowania
 
         }
-        Invoke("SetCurrentquestion", 1f);
         return correctanswer;
 
     }
+    [System.Serializable]
+    public enum GameStatus
+    {
+        Next,
+        Plaing
+    }
 
-   
 }
 
 

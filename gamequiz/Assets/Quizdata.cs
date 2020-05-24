@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="QuestionsDB", menuName = "QuestionDB")]
 public class Quizdata : ScriptableObject
 {
-    public List<Question> questions;
+    public List<Question> questions; 
 }

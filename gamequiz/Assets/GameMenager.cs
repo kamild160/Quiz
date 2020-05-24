@@ -4,16 +4,16 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class GameMenager : MonoBehaviour
 {
-    [SerializeField] private QuestionTF quizDB;
-
-    
-   private List<Question> unAnswered;
+    private List<Question> unAnswered;
 
     private Question currentQuestion;
+
+    [SerializeField]
+    private List<QuestionTF> quizDB;
 
     [SerializeField]
     private Text questionText;
@@ -22,57 +22,80 @@ public class GameMenager : MonoBehaviour
     private float waitforquestion = 1f;
 
     [SerializeField]
-    private Text Truebuttontext;
+    private List<Button> categorybtn;
 
     [SerializeField]
-    private Text Falsebuttontext;
+    private GameObject categoryPanel;
 
     [SerializeField]
-    private Text Nextbuttontext;
+    private Button Truebtn;
+    [SerializeField]
+    private Button Falsebtn;
 
     [SerializeField]
-    private Animator animationmove;
+    private Color correctColor;
 
-    void Start()
+    [SerializeField]
+    private Color wrongColor;
+
+    [SerializeField]
+    private Color ColorstandardColor;
+
+
+    void Startgame(int index)
     {
-        
+        //int index =0;
+        unAnswered = new List<Question>();
 
-       
-
-        
-
-        unAnswered = quizDB.questionstf;
+        for (int i = 0; i < quizDB[index].questionstf.Count; i++)
+        {
+            unAnswered.Add(quizDB[index].questionstf[i]);
+        }
+      
         SetCurrentquestion();
 
-
     }
-    
+    void Awake()
+    {
+        for (int i = 0; i < categorybtn.Count; i++)
+        {
+            Button localbtn = categorybtn[i];
+            localbtn.onClick.AddListener(() => Click(localbtn));
+        }
+    }
+    private void Click(Button btn)
+    {
+        switch (btn.name)
+        {
+            case "Kategoria 1":
+                Startgame(0);
+                Debug.Log("start");
+                categoryPanel.SetActive(false);
+                break;
+            case "Kategoria 2":
+                Startgame(1);
+                categoryPanel.SetActive(false);
+                break;
+            case "Kategoria 3":
+                Startgame(2);
+                categoryPanel.SetActive(false);
+                break;
+        }
+
+         
+    }
+
 
     void SetCurrentquestion()//wybieramy pytanie z listy
     {
-        
-
+        Truebtn.image.color = ColorstandardColor;
+        Falsebtn.image.color = ColorstandardColor;
         int randomQuestionID = Random.Range(0, unAnswered.Count);
         currentQuestion = unAnswered[randomQuestionID];
-        
 
-
+        bool isanswered = false;
         questionText.text = currentQuestion.question; //wyświetl pytanie
-
-        if (currentQuestion.isTrue)
-        {
-            Truebuttontext.text = "BRAWO ! Oby tak dalej ";
-            Falsebuttontext.text = "Niestety nie tym razem ";
-            Nextbuttontext.text = "Przechodzę do następnego pytania";
-
-        }else
-        {
-
-            Truebuttontext.text = "Niestety nie tym razem ";
-            Falsebuttontext.text = "BRAWO ! Oby tak dalej ";
-            Nextbuttontext.text = "Przechodzę do następnego pytania";
-
-        }
+        
 
         unAnswered.RemoveAt(randomQuestionID); //usuwamy obecne pytanie
 
@@ -80,59 +103,62 @@ public class GameMenager : MonoBehaviour
 
     public void TruePressed() //wciśnięcie przysisku prawda
     {
-        animationmove.SetTrigger("False");
-
+               
         if (currentQuestion.isTrue)
         {
+
             Scores.pointssum += 1;
-            Debug.Log("YES");
+            Truebtn.image.color = correctColor;
 
         }
         else
         {
-            Debug.Log("NO");
+            Truebtn.image.color = wrongColor;
         }
-        StartCoroutine(GotoNextQuestion()); //przejdź do kolejnego pytania
+
+        if (unAnswered.Count > 0)
+        {
+            Invoke("SetCurrentquestion", 1.5f);
+        }
+        else
+        {
+            Wait();
+            SceneManager.LoadScene("sumup");
+
+        }
     }
 
     public void FalsePressed()//wciśnięcie przysisku fałsz
     {
-        animationmove.SetTrigger("True");
+        
         if (!currentQuestion.isTrue)
         {
             Scores.pointssum += 1;
-            Debug.Log("YES");
+            Falsebtn.image.color = correctColor;
+
         }
         else
         {
-            Debug.Log("NO");
+            Falsebtn.image.color = wrongColor;
+
         }
 
-        StartCoroutine(GotoNextQuestion());
-    }
-
-    public void NextPressed()//wciśnięcie przysisku nie wiem 
-    {
-        animationmove.SetTrigger("Next");
-        
-        StartCoroutine(GotoNextQuestion());
-    }
-
-    IEnumerator GotoNextQuestion()
-    {
-        
-        
-        if (unAnswered == null || unAnswered.Count == 0)
+        if (unAnswered.Count > 0)
         {
-            yield return new WaitForSeconds(waitforquestion);
-            SceneManager.LoadScene("sumup");
+            Invoke("SetCurrentquestion", 1.5f);
         }
-        else { }
-        yield return new WaitForSeconds(waitforquestion); //czekamy chwile zanim załadujemy kolejne
-        Screen.fullScreen = !Screen.fullScreen;
+        else
+        {
+            Wait();
+            SceneManager.LoadScene("sumup");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
 
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.5f);
     }
     }
 

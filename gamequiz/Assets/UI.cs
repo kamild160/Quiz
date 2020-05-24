@@ -9,33 +9,50 @@ public class UI : MonoBehaviour
 {
     [SerializeField]
     private Quizgamemenager quizgamemenager;
+
     [SerializeField]
     private Text questionSentence;
+
+    [SerializeField]
+    private GameObject categoryPanel;
+
     [SerializeField]
     private List<Button> answers;
+
+    [SerializeField]
+    private List<Button> categorybtn;
+
     [SerializeField]
     private Color correctColor;
+
     [SerializeField]
     private Color wrongColor;
+
     [SerializeField]
     private Color ColorstandardColor;
 
     private Question question;
     private bool isanswered;
 
-    // Start is called before the first frame update
-    void Awake()
+    
+    void Awake() //obsługa działania przycisków odpowiedzi i kategorii 
     {
         for (int i = 0; i < answers.Count; i++)
         {
-            Button localbtn = answers[i];
-            localbtn.onClick.AddListener(() => Click(localbtn));
+            Button button = answers[i];
+            button.onClick.AddListener(() => Click(button));
+        }
+
+        for (int i = 0; i < categorybtn.Count; i++)
+        {
+            Button button = categorybtn[i];
+            button.onClick.AddListener(() => Click(button));
         }
     }
 
   
 
-    public void Setquestion(Question question)
+    public void Setquestion(Question question) //ustawianie pytania 
     {
         this.question = question;
         questionSentence.text = question.question;
@@ -45,7 +62,7 @@ public class UI : MonoBehaviour
         {
             answers[i].GetComponentInChildren<Text>().text = answerlist[i];
             answers[i].name = answerlist[i];
-            answers[i].image.color = ColorstandardColor; //set color of button to normal
+            answers[i].image.color = ColorstandardColor; 
             
 
         }
@@ -53,27 +70,46 @@ public class UI : MonoBehaviour
         
     }
 
-    private void Click(Button btn)
+    private void Click(Button btn) //obsługa wciskania przysików 
     {
-        if (!isanswered)
+        if (quizgamemenager.Gamestatus == Quizgamemenager.GameStatus.Plaing)
         {
-            isanswered = true;
-            bool value = quizgamemenager.Answer(btn.name);
-
-            if (value)
+            if (!isanswered)
             {
-                btn.image.color = correctColor;
-            }
-            else
-            {
-                btn.image.color = wrongColor;
-            }
+                isanswered = true;
+                bool value = quizgamemenager.Answer(btn.name);
 
+                if (value)
+                {
+                    btn.image.color = correctColor;
+                }
+                else
+                {
+                    btn.image.color = wrongColor;
+                }
+
+            }
+        }
+
+        switch(btn.name) //wybór kategorii 
+        {
+            case "Kategoria 1":
+                quizgamemenager.StartQuiz(0);
+                categoryPanel.SetActive(false);
+                break;
+            case "Kategoria 2":
+                quizgamemenager.StartQuiz(1);
+                categoryPanel.SetActive(false);
+                break;
+            case "Kategoria 3":
+                quizgamemenager.StartQuiz(2);
+                categoryPanel.SetActive(false);
+                break;
         }
     }
 
 }
-public class Randomizelist
+public class Randomizelist //losowe ustawienie odpowiedzi w pytaniu
 {
     public static List<list> randomizeelements<list>(List<list> inputList)
     {

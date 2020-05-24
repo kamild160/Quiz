@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a383b7441d7014743a83912c7e92474e, type: 3}
   m_Name: QuestionsTF
   m_EditorClassIdentifier: 
-  questionstf: []
+  questionstf:
+  - question: test
+    optionsanswers: []
+    rightAnswer: 
+    isTrue: 1
+  - question: test 0
+    optionsanswers: []
+    rightAnswer: 
+    isTrue: 0

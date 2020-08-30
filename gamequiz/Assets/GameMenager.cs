@@ -12,8 +12,7 @@ public class GameMenager : MonoBehaviour
 
     private Question currentQuestion;
 
-    [SerializeField]
-    private List<QuestionTF> quizDB;
+   
 
     [SerializeField]
     private Text questionText;
@@ -41,6 +40,8 @@ public class GameMenager : MonoBehaviour
     [SerializeField]
     private Color ColorstandardColor;
 
+    [SerializeField]
+    private List<QuestionTF> quizDB;
 
     void Startgame(int index)
     {
@@ -107,7 +108,7 @@ public class GameMenager : MonoBehaviour
         if (currentQuestion.isTrue)
         {
 
-            Scores.pointssum += 1;
+            Scoresmulti.pointssum += 1;
             Truebtn.image.color = correctColor;
 
         }
@@ -123,7 +124,7 @@ public class GameMenager : MonoBehaviour
         else
         {
             Wait();
-            SceneManager.LoadScene("sumup");
+            SceneManager.LoadScene("sumup multi");
 
         }
     }
@@ -133,7 +134,7 @@ public class GameMenager : MonoBehaviour
         
         if (!currentQuestion.isTrue)
         {
-            Scores.pointssum += 1;
+            Scoresmulti.pointssum += 1;
             Falsebtn.image.color = correctColor;
 
         }
@@ -150,7 +151,7 @@ public class GameMenager : MonoBehaviour
         else
         {
             Wait();
-            SceneManager.LoadScene("sumup");
+            SceneManager.LoadScene("sumup multi");
 
         }
     }

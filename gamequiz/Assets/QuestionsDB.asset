@@ -13,11 +13,19 @@ MonoBehaviour:
   m_Name: QuestionsDB
   m_EditorClassIdentifier: 
   questions:
-  - question: 4
+  - question: test
     optionsanswers:
     - 1
     - 2
     - 3
     - 4
     rightAnswer: 4
+    isTrue: 0
+  - question: test22
+    optionsanswers:
+    - 1
+    - 23
+    - 4
+    - 5
+    rightAnswer: 5
     isTrue: 0

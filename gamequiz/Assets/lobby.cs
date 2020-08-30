@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Photon;
-using Photon.Pun;
+﻿using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
+using System;
 
 public class lobby : MonoBehaviourPunCallbacks
 {
@@ -14,6 +11,7 @@ public class lobby : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI waitText = null;
 
     private bool connection = false;
+   
 
     private const string GameVersion = "0.01"; //aby nawiązać połączenie wersjie gracy muszą być takie same
     private const int PlayersinRoom = 2; //liczba graczy potrzeba aby zacząć grę
@@ -21,7 +19,7 @@ public class lobby : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        PhotonNetwork.AutomaticallySyncScene= true;//potrzebne do synchornizacji scen między graczami
+        PhotonNetwork.AutomaticallySyncScene = true;//potrzebne do synchornizacji scen między graczami
     }
 
     public void Findplayer()
@@ -32,7 +30,7 @@ public class lobby : MonoBehaviourPunCallbacks
 
         waitText.text = "Szukam graczy...";
 
-        if(PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected)
         {
             PhotonNetwork.JoinRandomRoom();
 
@@ -43,14 +41,14 @@ public class lobby : MonoBehaviourPunCallbacks
             PhotonNetwork.ConnectUsingSettings();
 
         }
- 
-}
+
+    }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Połączone z mistrzem");
 
-        if(connection)
+        if (connection)
         {
             PhotonNetwork.JoinRandomRoom();
         }
@@ -78,10 +76,10 @@ public class lobby : MonoBehaviourPunCallbacks
 
         int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
 
-        if(playerCount !=PlayersinRoom)
+        if (playerCount != PlayersinRoom)
         {
             waitText.text = "Czekam";
-            
+
 
         }
         else
@@ -89,17 +87,19 @@ public class lobby : MonoBehaviourPunCallbacks
             waitText.text = "Znaleziono gracza";
         }
 
-      
+
     }
     //dla czekającego, osoby w lobby 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        if(PhotonNetwork.CurrentRoom.PlayerCount == PlayersinRoom)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == PlayersinRoom)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false; //uniemożniwia dołączenie jeżeli liczba graczy jest maksymalna
             waitText.text = "Znaleziono gracza";
 
-            PhotonNetwork.LoadLevel("Gamescrren");
+            PhotonNetwork.LoadLevel("Questiontype");
         }
     }
+
+   
 }

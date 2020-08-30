@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: QuestionsTF
   m_EditorClassIdentifier: 
   questionstf:
-  - question: test
+  - question: test p
     optionsanswers: []
     rightAnswer: 
     isTrue: 1
-  - question: test 0
+  - question: test f
+    optionsanswers: []
+    rightAnswer: 
+    isTrue: 0
+  - question: test f
     optionsanswers: []
     rightAnswer: 
     isTrue: 0

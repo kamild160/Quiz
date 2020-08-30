@@ -9,27 +9,42 @@ EditorBuildSettings:
     path: Assets/Scenes/Gamescrren.unity
     guid: 098dffa5c4addbe45bd97262b5dbbfe7
   - enabled: 1
+    path: Assets/Scenes/Questiontype.unity
+    guid: bd8493d541dca4294a69bfce38145d2b
+  - enabled: 1
     path: Assets/Scenes/lobby.unity
     guid: 13a4dce2c793646d5b45d24a9d1313a2
   - enabled: 1
-    path: Assets/Scenes/quizgame.unity
-    guid: 3cf488ef46c844f4a97286f3e3992ace
-  - enabled: 1
-    path: Assets/Scenes/sumup.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Gamemode.unity
     guid: 0ad3937c20ccb411489855bd15de9f9d
-  - enabled: 1
-    path: Assets/Scenes/Questiontype.unity
+  - enabled: 0
+    path: Assets/Scenes/Gamescrren IOS.unity
+    guid: 33afd674ec0524da3a0056a9ca806000
+  - enabled: 0
+    path: Assets/Scenes/Questiontype ios.unity
     guid: 31894594259474fad839d8e5441a351c
   - enabled: 1
     path: Assets/Scenes/QuizgamePanel.unity
     guid: 30c83cd6d620449d6b326bdd1b6fdb6d
   - enabled: 0
-    path: Assets/Scenes/Gamescrren IOS.unity
-    guid: 33afd674ec0524da3a0056a9ca806000
-  - enabled: 0
     path: Assets/Scenes/Gamemode IOS.unity
     guid: 754a0a65ebcd04a6abeef0252d272943
+  - enabled: 0
+    path: Assets/Scenes/lobby ios.unity
+    guid: 710d2ef953c29428e830158e5be84f84
+  - enabled: 0
+    path: Assets/Scenes/quizgame ios.unity
+    guid: d479e742895b34dbcbe6f1d93acec6eb
+  - enabled: 0
+    path: Assets/Scenes/QuizgamePanel ios.unity
+    guid: a6ede1b89293748dfa4c3b206a6c27f1
+  - enabled: 0
+    path: Assets/Scenes/sumup.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/quizgame.unity
+    guid: 3cf488ef46c844f4a97286f3e3992ace
+  - enabled: 1
+    path: Assets/Scenes/sumup multi.unity
+    guid: e1208c2210b124ba19ba0af1d2b806cf
   m_configObjects: {}

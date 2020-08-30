@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>184270766982-1a2h2e6dflr401refk7mmoa3b46lnte9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.184270766982-1a2h2e6dflr401refk7mmoa3b46lnte9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJst6G5_675jILxIzjfcSbtAT7PESHWvQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>184270766982</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.DefaultCompany.gamequiz</string>
+	<key>PROJECT_ID</key>
+	<string>quizgame-inz</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quizgame-inz.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:184270766982:ios:8e81883fb629712af86207</string>
+	<key>DATABASE_URL</key>
+	<string>https://quizgame-inz.firebaseio.com</string>
+</dict>
+</plist>

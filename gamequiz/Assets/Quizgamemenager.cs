@@ -19,13 +19,15 @@ public class Quizgamemenager : MonoBehaviour
 
     private Question selectQuestion;
 
+    nazwagracza nazwagracza;
+
 
     private GameStatus gamestatus = GameStatus.Next;
     public GameStatus Gamestatus { get { return gamestatus; } }
 
-    
     public void StartQuiz(int index)
     {
+        
         questions =new List<Question>();
 
         for (int i=0;i< quizDB[index].questions.Count; i++)
@@ -57,7 +59,7 @@ public class Quizgamemenager : MonoBehaviour
         if(answered == selectQuestion.rightAnswer)
 
         {
-            Scores.pointssum += 1;
+            Scoresmulti.pointssum += 1;
             correctanswer = true;
 
         }
@@ -68,7 +70,7 @@ public class Quizgamemenager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("sumup"); //jeżeli nie ma juz pytań pokaż ekran podsumowania
+            SceneManager.LoadScene("sumup multi"); //jeżeli nie ma juz pytań pokaż ekran podsumowania
 
         }
         return correctanswer;
@@ -80,6 +82,8 @@ public class Quizgamemenager : MonoBehaviour
         Next,
         Plaing
     }
+
+   
 
 }
 

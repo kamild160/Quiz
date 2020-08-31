@@ -33,15 +33,12 @@ public class lobby : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {
             PhotonNetwork.JoinRandomRoom();
-
         }
         else
         {
             PhotonNetwork.GameVersion = GameVersion;
             PhotonNetwork.ConnectUsingSettings();
-
         }
-
     }
 
     public override void OnConnectedToMaster()
@@ -80,13 +77,11 @@ public class lobby : MonoBehaviourPunCallbacks
         {
             waitText.text = "Czekam";
 
-
         }
         else
         {
             waitText.text = "Znaleziono gracza";
         }
-
 
     }
     //dla czekającego, osoby w lobby 
@@ -100,6 +95,4 @@ public class lobby : MonoBehaviourPunCallbacks
             PhotonNetwork.LoadLevel("Questiontype");
         }
     }
-
-   
 }

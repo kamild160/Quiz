@@ -8,7 +8,7 @@ using Proyecto26;
 
 public class Scores: MonoBehaviour
 {
-    public nazwagracza nazwagracza; 
+    nazwagracza nazwagracza; 
     //Zliczanie punktów i wyświetlanie wyniku
     public static int pointssum = 0;
     Text points;
@@ -19,7 +19,7 @@ public class Scores: MonoBehaviour
     void Start()
     {
         points = GetComponent<Text>();
-
+      
 
     }
 

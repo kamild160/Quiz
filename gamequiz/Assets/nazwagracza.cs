@@ -16,11 +16,7 @@ public class nazwagracza : MonoBehaviour
     public static string Playernick;
     public static int score;
 
-    Scoresmulti scoresmulti;
     
-
-
-
     private void Start()
     {
         SetUpInputField();

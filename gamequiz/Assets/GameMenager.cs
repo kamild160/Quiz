@@ -161,5 +161,7 @@ public class GameMenager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
     }
+
+   
     }
 

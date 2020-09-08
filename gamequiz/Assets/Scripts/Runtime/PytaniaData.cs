@@ -13,20 +13,12 @@ public class PytaniaData
   public string Questions { get {return questions; } set { this.questions = value;} }
   
   [SerializeField]
-  string answer1;
-  public string Answer1 { get {return answer1; } set { this.answer1 = value;} }
+  string[] answers = new string[0];
+  public string[] Answers { get {return answers; } set { this.answers = value;} }
   
   [SerializeField]
-  string answer2;
-  public string Answer2 { get {return answer2; } set { this.answer2 = value;} }
-  
-  [SerializeField]
-  string answer3;
-  public string Answer3 { get {return answer3; } set { this.answer3 = value;} }
-  
-  [SerializeField]
-  string answer4;
-  public string Answer4 { get {return answer4; } set { this.answer4 = value;} }
+  string correctanswer;
+  public string Correctanswer { get {return correctanswer; } set { this.correctanswer = value;} }
   
   [SerializeField]
   bool isture;

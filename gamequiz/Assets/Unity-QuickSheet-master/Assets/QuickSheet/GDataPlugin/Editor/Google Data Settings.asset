@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Google Data Settings
   m_EditorClassIdentifier: 
   TemplatePath: QuickSheet/GDataPlugin/Templates
-  RuntimePath: 
-  EditorPath: 
+  RuntimePath: Scripts/Runtime
+  EditorPath: Scripts/Editor
   OAuth2Data:
-    client_id: 
+    client_id: 781963506315-k1gk97dol2e5p3fvcaif5476mubpatdb.apps.googleusercontent.com
     auth_uri: 
     token_uri: 
     auth_provider_x509_cert_url: 
-    client_secret: 
+    client_secret: ANwBSJfNjmA7Ys0McoyzYu-O
     redirect_uris: []
-  _AccessCode: Paste AcecessCode here!
-  _RefreshToken: 
-  _AccessToken: 
+  _AccessCode: 4/3wH1k5cGQRVHUB0WIKvJdIKisMHb1cw5CiHWNDUVa7sWNK93xszZIug
+  _RefreshToken: 1//0cgaH5Xx23KlhCgYIARAAGAwSNwF-L9IriLJ2Y6oYA7smsLVtZ2jHTq8mzsPLAQRgJK742YTQ9ieaoJS7ABABqiJMp_QxK3yIeY8
+  _AccessToken: ya29.a0AfH6SMBwAgkUGYtxA2HfUNX326Fw0bpmtR0RdaCqrRjcbpbapv2DI4UriO_9YKHCedw35Qro5BO1lpzZ7FA6jlDV8rrKGyIPq592Vu3MqyirIM5Z7EzTOGrRNClQe01y-jkRFO3_yZJXJlgc9poZVgkvXl4k89-LrtQ

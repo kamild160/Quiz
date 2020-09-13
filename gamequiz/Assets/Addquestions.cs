@@ -49,7 +49,7 @@ public class Addquestions : MonoBehaviour
     private void Posttodb()
     {
         Question question = new Question();
-        RestClient.Put("https://quizgame-inz.firebaseio.com/"+questions + ".json", question);
+        RestClient.Put("https://quizgame-inz.firebaseio.com/questions/"+questions + ".json", question);
 
     }
     public void ValueChange()

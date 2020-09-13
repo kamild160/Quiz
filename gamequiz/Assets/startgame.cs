@@ -12,4 +12,9 @@ public class startgame : MonoBehaviour
         Screen.fullScreen = !Screen.fullScreen;
         SceneManager.LoadScene(level);
     }
+
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
 }

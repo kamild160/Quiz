@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: QuestionsDB 1
   m_EditorClassIdentifier: 
   questions:
-  - question: 4
+  - question: "W kt\xF3rym mie\u015Bcie znajduje si\u0119 siedziba Komisji Europejskiej"
     optionsanswers:
-    - 1
-    - 23
-    - 4
-    - 4
-    rightAnswer: 4
+    - Strasburg
+    - Bruksela
+    - Berlin
+    - Frankfurt
+    rightAnswer: Bruksela
     isTrue: 0

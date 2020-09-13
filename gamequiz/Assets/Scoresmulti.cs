@@ -9,69 +9,77 @@ using UnityEditor;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
+using System.IO;
+using System;
+using FullSerializer;
+using System.Text;
 
-public class Scoresmulti: MonoBehaviour
+public class Scoresmulti : MonoBehaviour
 {
 
     //Zliczanie punktów i wyświetlanie wyniku
     public static int pointssum = 0;
-    //public Text points;
+    public Text points;
     private string user;
-    public Text scoresboard;
 
-    USers users = new USers();
+   
 
+
+
+    USers scorres = new USers();
+
+    public static fsSerializer serializer = new fsSerializer();
 
 
     void Start()
     {
-        //points = GetComponent<Text>();
-        Posttodb();
+        //Posttodb();
+        Debug.Log("wykonano");
         Getdata();
-
-
-
     }
 
-    private void getscore()
-    {
-        scoresboard.text = users.ToString();
+  
 
-    }
     void Update()
     {
 
-     //points.text = "Poprawne odpowiedzi:  " + pointssum;
+     points.text = "Poprawne odpowiedzi:  " + pointssum;
         
     }
 
     private void Posttodb()
-    {        user = nazwagracza.Playernick;
+    {
+        user = nazwagracza.Playernick;
 
         if (user != null)
         {
             USers users = new USers();
 
-            RestClient.Put("https://quizgame-inz.firebaseio.com/" + user + ".json", users);
-        }      
+            RestClient.Put("https://quizgame-inz.firebaseio.com/names/" + user + ".json", users);
+        }
     }
 
     private void Getdata()
     {
-        
-
-        RestClient.Get<USers>("https://quizgame-inz.firebaseio.com/.json?orderBy='scores'&startAt=0").Then(response =>
+       
+        RestClient.Get("https://quizgame-inz.firebaseio.com/.json").Then(response =>
         {
 
-            users = response;
-            getscore();
+            fsData userdata = fsJsonParser.Parse(response.Text);
 
-        });
+            USers[] users = null;
+            serializer.TryDeserialize(userdata, ref users);
+           
+         });
 
-     
+       
+        
+      
+
+    }
+
+    
 
 
 }
 
-
-}

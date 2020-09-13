@@ -61,7 +61,7 @@ public class nazwagracza : MonoBehaviour
     private void Posttodb()
     {
         USers users = new USers();
-        RestClient.Put("https://quizgame-inz.firebaseio.com/" + Playernick + ".json", users);
+        RestClient.Put("https://quizgame-inz.firebaseio.com/names/" + Playernick + ".json", users);
 
     }
 

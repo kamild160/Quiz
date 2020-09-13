@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/QuizgamePanel ios.unity
     guid: a6ede1b89293748dfa4c3b206a6c27f1
   - enabled: 0
-    path: Assets/Scenes/sumup.unity
+    path: 
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/quizgame.unity
@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/sumup multi.unity
     guid: e1208c2210b124ba19ba0af1d2b806cf
+  - enabled: 1
+    path: Assets/Scenes/Add question.unity
+    guid: 7d2e4c4a3601c4010bce4ea08d5b0836
   m_configObjects: {}

@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: QuestionsDB
   m_EditorClassIdentifier: 
   questions:
-  - question: test
+  - question: 'ile jest 2+2:2 ? '
     optionsanswers:
-    - 1
-    - 2
+    - 8
     - 3
-    - 4
-    rightAnswer: 4
-    isTrue: 0
-  - question: test22
-    optionsanswers:
+    - 2
     - 1
-    - 23
+    rightAnswer: 3
+    isTrue: 0
+  - question: "Ojciec ma 27 lat, a syn 5. Za ile lat ojciec b\u0119dzie 3 razy starszy
+      od syna?"
+    optionsanswers:
     - 4
-    - 5
-    rightAnswer: 5
+    - 6
+    - 3
+    - 13
+    rightAnswer: 6
     isTrue: 0

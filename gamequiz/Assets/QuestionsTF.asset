@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: QuestionsTF
   m_EditorClassIdentifier: 
   questionstf:
-  - question: test p
+  - question: "Robaczki \u015Bwi\u0119toja\u0144skie swoimi \u015Bwiate\u0142kami
+      o\u015Bwietlaj\u0105 sobie drog\u0119"
     optionsanswers: []
     rightAnswer: 
     isTrue: 1
-  - question: test f
+  - question: "Szop pracz pierze swoj\u0105 sier\u015B\u0107"
     optionsanswers: []
     rightAnswer: 
     isTrue: 0
-  - question: test f
+  - question: "Ptaki od\u017Cywiaj\u0105ce si\u0119 rybami, po\u0142ykaj\u0105 je
+      g\u0142ow\u0105 do przodu, \u017Ceby nie utkn\u0119\u0142y im w gardle"
     optionsanswers: []
     rightAnswer: 
-    isTrue: 0
+    isTrue: 1

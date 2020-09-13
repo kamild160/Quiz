@@ -8,6 +8,8 @@ namespace Proyecto26
     [Serializable]
     public class ResponseHelper
     {
+        internal string text;
+
         /// <summary>
         /// The UnityWebRequest used in the current request.
         /// </summary>

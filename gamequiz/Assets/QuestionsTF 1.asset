@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: QuestionsTF 1
   m_EditorClassIdentifier: 
   questionstf:
-  - question: test22
+  - question: "Prezydentem USA w czasie kryzysu kuban\u0301skiego by\u0142 John Kennedy"
     optionsanswers: []
     rightAnswer: 
     isTrue: 1
-  - question: tst 22
+  - question: "J\u0105dro Ziemi jest tak gor\u0105ce jak S\u0142o\u0144ce"
     optionsanswers: []
     rightAnswer: 
-    isTrue: 0
-  - question: 222
+    isTrue: 1
+  - question: "Mur Chi\u0144ski jest jedynym obiektem zbudowanym przez cz\u0142owieka
+      widocznym z kosmosu"
     optionsanswers: []
     rightAnswer: 
     isTrue: 0

@@ -17,4 +17,11 @@ public class USers : MonoBehaviour
         scores = Scoresmulti.pointssum;
 
     }
+    public USers(int score, string name )
+    {
+        this.scores = score;
+        this.name = name;
+
+    }
 }
+

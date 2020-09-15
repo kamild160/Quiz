@@ -35,7 +35,7 @@ public class Scoresmulti : MonoBehaviour
     {
         //Posttodb();
         Debug.Log("wykonano");
-        Getdata();
+        
     }
 
   
@@ -59,24 +59,7 @@ public class Scoresmulti : MonoBehaviour
         }
     }
 
-    private void Getdata()
-    {
-       
-        RestClient.Get("https://quizgame-inz.firebaseio.com/.json").Then(response =>
-        {
-
-            fsData userdata = fsJsonParser.Parse(response.Text);
-
-            USers[] users = null;
-            serializer.TryDeserialize(userdata, ref users);
-           
-         });
-
-       
-        
-      
-
-    }
+   
 
     
 
